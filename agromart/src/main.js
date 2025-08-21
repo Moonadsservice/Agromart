@@ -193,6 +193,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
+        // Add checks to ensure appConfig is loaded before using it
+        if (!appConfig.WHATSAPP || !appConfig.BANK) {
+            alert('Critical Error: Application configuration is missing. Cannot proceed with payment flow.');
+            return;
+        }
+
         if (method === 'pay_on_delivery') {
             const itemsText = items.map(i => `${i.title} × ${i.qty} - ₦${(i.price * i.qty).toLocaleString()}`).join('\\n');
             const message = `*New POD Request*\\n\\nOrder #${order.id}\\n\\nItems:\\n${itemsText}\\n\\nTotal: *₦${total.toLocaleString()}*\\n\\n---\\n\\nCustomer:\\n${shipping.name}\\n${shipping.phone}\\n${shipping.address}\\nNote: ${shipping.note}`;
