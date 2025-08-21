@@ -39,10 +39,7 @@ Follow these steps to get your own instance of AgroMart running.
 
 1.  **Fork/Clone this Repository:** Get a copy of this repository on your GitHub/GitLab account.
 2.  **Create a New Netlify Site:** Go to your Netlify dashboard and create a new site linked to your repository.
-3.  **Configure Build Settings:** Netlify should automatically detect the settings from `netlify.toml`. If you need to set them manually:
-    *   **Base directory:** `agromart`
-    *   **Build command:** `mkdir -p dist && cp -r src/. dist/ && cp -r public/. dist/`
-    *   **Publish directory:** `dist`
+3.  **Configure Build Settings:** Netlify will automatically detect the build settings from the `netlify.toml` file in the repository. No manual configuration is needed.
 4.  **Set Environment Variables:** In your Netlify site's settings, go to **Site settings > Build & deploy > Environment**. Add the following environment variables:
 
 | Key | Value |
