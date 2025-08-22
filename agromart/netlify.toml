@@ -1,11 +1,11 @@
 # Netlify configuration for AgroMart
 
 [build]
-  # This command assumes it is run from the repository root, where the `src`
-  # and `public` directories are located.
-  command = "mkdir -p dist && cp -r src/. dist/ && cp -r public/. dist/"
-  publish = "dist"
-  functions = "netlify/functions"
+  # The build command and paths are relative to the repository root.
+  # This configuration is for a project located in the `agromart` subdirectory.
+  command = "mkdir -p agromart/dist && cp -r agromart/src/. agromart/dist/ && cp -r agromart/public/. agromart/dist/"
+  publish = "agromart/dist"
+  functions = "agromart/netlify/functions"
 
 # Settings for Netlify Functions
 [functions]
